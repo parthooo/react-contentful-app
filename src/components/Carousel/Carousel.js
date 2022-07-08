@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Loader from '../Loader/Loader';
 
 // import 'swiper/core/';
 // import 'swiper/components/navigation/navigation.scss'
@@ -54,6 +55,11 @@ const Carousel = () => {
         getCarouselSlides()
     }, [getCarouselSlides])
 
+
+    if (isCarouselLoading) {
+        return <Loader />
+    }
+
     // console.log('carouselSlides', carouselSlides);
     if (!Array.isArray(carouselSlides) || !carouselSlides.length ){
         return null
@@ -61,7 +67,7 @@ const Carousel = () => {
 
     return (
         <div className='carousel'>
-            <Swiper>
+            <Swiper navigation>
                 {
                     carouselSlides.map((item) => {
                         const { id, slideBg, slideTitle, slideDescription } = item
