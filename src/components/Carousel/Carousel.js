@@ -20,7 +20,7 @@ const Carousel = () => {
     const [carouselSlides, setCarouselSlides] = useState([])
 
     const cleanUpCarouselSlides = useCallback((rawData) => {
-        const cleanslides = rawData.map((slide) => {
+        const cleanSlides = rawData.map((slide) => {
             const { sys, fields } = slide;
             const { id } = sys;
             const slideTitle = fields.title;
@@ -30,7 +30,7 @@ const Carousel = () => {
             return updatedSlide;
 
         })
-        setCarouselSlides(cleanslides)
+        setCarouselSlides(cleanSlides)
     }, [])
 
     const getCarouselSlides = useCallback(async () => {
