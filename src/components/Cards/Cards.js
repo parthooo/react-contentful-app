@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../../client";
 import './Cards.css'; 
+import Loader from '../Loader/Loader';
 
 const Card = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState([])
-  console.log(loading);
 
   useEffect(() => {
     // Simulating a data fetching operation
     const fetchData = async () => {
+      setIsLoading(true)
       try {
         // Simulate an API call
         const response = await client.getEntries({

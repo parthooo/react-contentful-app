@@ -45,6 +45,7 @@ const Carousel = () => {
                 setCarouselSlides([cleanUpCarouselSlides])
             }
             setIsCarouselLoading(false)
+            console.log(responseData);
         } catch (error) {
             console.log(error)
             setIsCarouselLoading(false)
@@ -83,4 +84,5 @@ const Carousel = () => {
     )
 }
 
-export default Carousel
+export default Carousel;
+

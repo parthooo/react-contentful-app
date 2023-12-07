@@ -1,12 +1,13 @@
 import React from 'react';
 import Carousel from '../components/Carousel/Carousel.js';
-import Card from '../components/Cards/Card.js';
+import Cards from '../components/Cards/Cards.js';
+
 
 const Homepage = () => {
     return (
         <div>
             <Carousel /> 
-            <Card/>
+            <Cards/>
         </div>
     );
 };
